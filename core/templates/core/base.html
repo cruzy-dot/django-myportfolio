@@ -10,10 +10,9 @@
   </head>
   <body class="bg-gray-100 font-sans">
     <!-- Header -->
-    <header class="bg-blue-600 text-white py-6">
+    <header class="fixed top-0 w-full bg-gray-900 text-white z-50 shadow">
       <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold">Portfolio</h1>
-        <p class="mt-2 text-lg">My Projects</p>
         <nav class="mt-4">
           <a href="{% url 'home' %}" class="text-white hover:underline mx-4"
             >Home</a
@@ -37,8 +36,61 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 text-center">
-      <p>© 2025 My Portfolio. All rights reserved.</p>
+    <footer class="bg-gray-900 text-gray-300 py-10">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center sm:text-left"
+      >
+        <!-- About -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">About Me</h4>
+          <p class="text-sm">
+            Passionate backend developer with a love for clean APIs and scalable
+            systems. This portfolio is my playground.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#projects" class="hover:text-blue-300">Projects</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-300">Contact</a>
+            </li>
+            <li>
+              <a href="#skills" class="hover:text-blue-300">Skills</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Connect</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="https://github.com/cruzy-dot"
+                target="_blank"
+                class="hover:text-white transition"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="mailto:chideracent0@gmail.com"
+                class="hover:text-white transition"
+                >Email Me</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center text-sm mt-10 text-gray-500">
+        © {{ now.year }} Benjamin. All rights reserved.
+      </div>
     </footer>
   </body>
 </html>

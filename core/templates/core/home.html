@@ -1,5 +1,25 @@
 {% extends 'core/base.html' %} {% load static %} {%block title%} Home - My
 Portfolio{% endblock%} {% block content %}
+
+<!-- Hero Section -->
+<section class="bg-blue-900 text-white py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
+      Hi, I'm Chidera<br />
+      <span class="text-blue-300">Backend Developer & Django Enthusiast</span>
+    </h1>
+    <p class="text-lg mb-8">
+      I craft scalable solutions with clean code and structured logic. Here’s a
+      glimpse of my technical journey.
+    </p>
+    <a
+      href="#projects"
+      class="inline-block bg-white text-blue-900 font-semibold py-4 px-8 rounded-lg shadow hover:bg-blue-100 transition"
+    >
+      View My Work
+    </a>
+  </div>
+</section>
 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {% for project in projects %}
   <div class="bg-white p-6 rounded-lg shadow-md">
