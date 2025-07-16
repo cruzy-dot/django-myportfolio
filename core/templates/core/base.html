@@ -11,22 +11,28 @@
   <body class="bg-gray-100 font-sans">
     <!-- Header -->
     <header class="fixed top-0 w-full bg-gray-900 text-white z-50 shadow">
-      <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Portfolio</h1>
-        <nav class="mt-4">
-          <a href="{% url 'home' %}" class="text-white hover:underline mx-4"
-            >Home</a
-          >
-          <a href="{% url 'about' %}" class="text-white hover:underline mx-4"
-            >About</a
-          >
-          <a href="{% url 'projects' %}" class="text-white hover:underline mx-4"
-            >Projects</a
-          >
-          <a href="{% url 'contact' %}" class="text-white hover:underline mx-4"
-            >Contact</a
-          >
-        </nav>
+      <div class="overlay">
+        <div class="container mx-auto text-center">
+          <h1 class="text-4xl font-bold">Portfolio</h1>
+          <nav class="mt-4">
+            <a href="{% url 'home' %}" class="text-white hover:underline mx-4"
+              >Home</a
+            >
+            <a href="{% url 'about' %}" class="text-white hover:underline mx-4"
+              >About</a
+            >
+            <a
+              href="{% url 'projects' %}"
+              class="text-white hover:underline mx-4"
+              >Projects</a
+            >
+            <a
+              href="{% url 'contact' %}"
+              class="text-white hover:underline mx-4"
+              >Contact</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -89,7 +95,7 @@
       </div>
 
       <div class="text-center text-sm mt-10 text-gray-500">
-        © {{ now.year }} Benjamin. All rights reserved.
+        © {{ now.year }} Cruzy. All rights reserved.
       </div>
     </footer>
   </body>
