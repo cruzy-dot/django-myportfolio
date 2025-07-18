@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w!t+vcb$v9l!x+96y=#eg#(kk(#jra81s66c)n@&gb5#2s+24k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'myportfolio.onrender.com']
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Middleware for serving static files in production
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -123,12 +124,24 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "core/static",  # Path to your static files directory
-]
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = 'static/' # URL to access static files
+STATIC_ROOT = BASE_DIR / 'static'  # Directory to collect static files for production
+STATICFILES_DIRS = [
+    BASE_DIR / "core/static", # Directory for static files in the core app
+]
+STATICFILE_ST_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+#from dotenv import load_dotenv, find_dotenv
+#load_dotenv(find_dotenv())
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = os.getenv("DEBUG") == "True"
 # Default primary key field type
+
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
