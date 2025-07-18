@@ -27,5 +27,5 @@ Deployment: Configured for local development (extendable to Heroku, Render, or s
 
 ## Contact
 
-- GitHub: [github.com/yourusername](https://github.com/cruzy-dot)
+- GitHub:https://github.com/cruzy-dot
 - Email:chideracent0@gmail.com
