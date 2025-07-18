@@ -127,8 +127,8 @@ USE_TZ = True
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_URL = 'static/' # URL to access static files
-STATIC_ROOT = BASE_DIR / 'static'  # Directory to collect static files for production
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / "core/static", # Directory for static files in the core app
 ]
