@@ -3,7 +3,7 @@ services:
     name: django-portfolio
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn myportfolio.wsgi:application"
+    startCommand: "gunicorn core.wsgi:application"
     region: oregon
     plan: free
     branch: main
